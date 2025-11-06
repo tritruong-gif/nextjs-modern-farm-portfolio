@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-brand-yellow: #E9C400;
+  --color-cta-yellow: #E6D15A;
+  --color-brand-green: #6B8E23;
+  --color-dark-green: #3A4D39;
+  --color-section-green: #4A632D;
+  --color-light-cream: #F9F9F7;
+  --color-gray-text: #555555;
+  --color-section-dark: #0a1a0a;
+
+  /* Background Images (as URLs) */
+  --image-wheat-pattern: url('/images/wheat-pattern.png');
+  --image-barn-watermark: url('/images/barn-watermark.png');
+
+  /* Fonts */
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-gray-text);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif; /* Or your chosen serif font for headings */
+}
