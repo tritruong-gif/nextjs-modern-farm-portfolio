@@ -24,7 +24,7 @@ export const historyEvents: HistoryEvent[] = [
   },
   {
     id: '4',
-    year: '1910', // Note: The year in the image is '1910', which is out of order. I'll use it as shown.
+    year: '2010', // Note: The year in the image is '2010', which is out of order. I'll use it as shown.
     title: 'Start of Agriculture',
     description: 'Consectetur magni Corrupti ut minus! Iusto eos consectetur similique minus culpa odio temporibus.',
   },

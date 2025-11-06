@@ -75,3 +75,27 @@ export interface BlogPost {
   imageUrl: string;
   href: string;
 }
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  category: string;
+  date: string;
+  author: string;
+  title: string;
+  imageUrl: string;
+  href: string;
+}
+
+export interface InfoItem {
+  id: string;
+  iconSrc: string;
+  title: string;
+  description: string;
+}
+
+export interface PartnerLogo {
+  id: string;
+  src: string;
+  alt: string;
+}

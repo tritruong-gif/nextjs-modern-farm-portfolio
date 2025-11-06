@@ -12,7 +12,7 @@
   --color-section-dark: #0a1a0a;
 
   /* Background Images (as URLs) */
-  --image-wheat-pattern: url('/images/wheat-pattern.png');
+  --image-wheat-pattern: url('/images/crop-pattern.jpg');
   --image-barn-watermark: url('/images/barn-watermark.png');
 
   /* Fonts */
