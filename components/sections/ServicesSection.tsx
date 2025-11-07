@@ -2,7 +2,7 @@
 // (Create this new file)
 
 import React from 'react';
-import { services } from '@/components/data/services';
+import { mockServices } from '@/components/data/services';
 import ServiceCard from '@/components/ui/ServiceCard';
 import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid';
@@ -47,7 +47,7 @@ const ServicesSection: React.FC = () => {
           {/* These ServiceCard components are rendered ON THE SERVER
             and passed as children to the client component.
           */}
-          {services.map((service) => (
+          {mockServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </ServiceCarousel>
