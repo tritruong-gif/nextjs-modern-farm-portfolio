@@ -41,7 +41,7 @@ const TimelineDot: React.FC = () => (
 
 const HistorySection: React.FC = () => {
   return (
-    <section className="bg-[#F9F9F7] py-20 px-4">
+    <section className="bg-light-cream py-20 px-4">
       <div className="container mx-auto">
         
         {/* Section Header (Unchanged) */}

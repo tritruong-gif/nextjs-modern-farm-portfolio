@@ -99,3 +99,9 @@ export interface PartnerLogo {
   src: string;
   alt: string;
 }
+
+export interface FaqItem {
+  id: string;
+  question: string;
+  answer: string;
+}

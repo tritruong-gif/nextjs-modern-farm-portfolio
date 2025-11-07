@@ -11,7 +11,7 @@ const InfoItem: React.FC<InfoItemProps> = ({ iconSrc, title, description }) => {
   return (
     <div className="flex items-start gap-4">
       <div className="flex-shrink-0">
-        <CustomImage src={iconSrc} alt="" width={40} height={40} />
+        <CustomImage src={iconSrc} alt={title} width={40} height={40} />
       </div>
       <div>
         <h4 className="text-lg font-bold text-dark-green mb-1">{title}</h4>
