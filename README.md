@@ -86,7 +86,7 @@ To run this project locally, you'll need Node.js (v18.17 or later).
 
 ```bash
 
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/tritruong-gif/nextjs-modern-farm-portfolio.git
 cd your-repo-name
 
 ```
