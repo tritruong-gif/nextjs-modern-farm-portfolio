@@ -7,6 +7,7 @@ import CallToActionSection from "@/components/sections/CallToActionSectionV2";
 export const metadata: Metadata = {
   title: 'Agrimo - Modern Farm Portfolio',
   description: 'A static portfolio site for a modern farm.',
+  icons: '/images/logo.svg',
 };
 
 export default function RootLayout({

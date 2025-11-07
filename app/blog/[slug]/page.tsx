@@ -10,7 +10,6 @@ import PostNavigation from '@/components/ui/PostNavigation';
 // --- Data Fetching Function (runs on server) ---
 async function getPostData(slug: string) {
   const allPosts = blogPosts;
-  console.log(slug);
   
   const post = allPosts.find(p => p.slug === slug);
   
@@ -39,7 +38,6 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { post, prevPost, nextPost } = await getPostData((await params).slug);
-    console.log(post);
     
   if (!post) {
     notFound();
