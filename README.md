@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agrimo - Modern Farm Portfolio Website
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind 4](https://img.shields.io/badge/Tailwind_4_(Alpha)-CSS-blue?logo=tailwindcss)
+![Vercel](https://img.shields.io/badge/Ready_to_Deploy-Vercel-black?logo=vercel)
 
-First, run the development server:
+A modern, high-performance, and fully responsive static portfolio website for a fictional farm named 'Agrimo'. This project is built from the ground up using the latest Next.js 14 App Router, TypeScript, and the experimental Tailwind 4 (Alpha) with a CSS-first, `@theme`-based approach.
+
+### Live Demo
+**[https://your-demo-link.vercel.app/](https://your-demo-link.vercel.app/)** *(Replace with your Vercel deployment URL)*
+
+<br>
+
+<details>
+  <summary><b>Click to view Full Homepage Screenshot</b></summary>
+  <img src="home.png" alt="Agrimo Homepage Mockup"/>
+</details>
+
+<br>
+
+## 🚀 Core Technologies
+
+* **Framework:** [Next.js 14 (App Router)](https://nextjs.org/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Styling:** [Tailwind 4 (Alpha)](https://tailwindcss.com/blog/tailwindcss-v4-alpha)
+    * CSS-first, `@theme`-based configuration (see `app/globals.css`).
+    * No `tailwind.config.ts`; a minimal `tailwind.config.js` is used for content scanning only.
+* **Architecture:** [React Server Components (RSC)](https://nextjs.org/docs/app/building-your-application/rendering/server-components) (Server-first, with "islands" of interactivity).
+* **Data:** Local static files (`/components/data/*.ts`) acting as a pseudo-database.
+* **Form Handling:** [Next.js Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) for the Contact Us form.
+* **Image Handling:** A custom `CustomImage` component with a built-in fallback to `/public/image-not-found.jpg`.
+
+## ✨ Key Features
+
+This project isn't just a simple static site; it leverages modern Next.js patterns to create a fast, maintainable, and rich user experience.
+
+* **Fully Responsive Design** for all pages and components.
+* **Complete Static Site Generation (SSG)** for all pages, including dynamic routes.
+* **Dynamic Breadcrumb Hero:** A reusable client component (`<BreadcrumbHero />`) that automatically generates the page title and breadcrumb path from the URL (`usePathname`).
+* **Reusable Server Component Wrappers:** The `<ServiceCarousel />` component is a client component that handles all carousel logic, but it accepts server-rendered children. This means the HTML for the cards is fully static, and the client only loads the JavaScript for the slider logic.
+* **Dynamic Filtering & Pagination:** The `/blog` and `/services` pages are server components that read URL `searchParams` (`?category=...` & `?page=...`) to filter and paginate data on the server *before* sending the final HTML.
+* **Server Actions:** The contact form submits directly to a Server Action (`/app/contact/actions.ts`) without needing a separate API route.
+* **Interactive Accordion:** A reusable, stateful client component (`<AccordionItem />`) used on the FAQ and Service Detail pages.
+
+### Included Pages
+* **Home:** A full landing page showcasing all major sections.
+* **About Us:** A detailed page with multiple content sections.
+* **Our History:** A page featuring a custom timeline.
+* **Services (with Pagination):** A grid of all services with pagination.
+* **Service Detail (`/services/[slug]`):** A dynamic page for each service with a scrolling sidebar nav.
+* **Blog (with Filtering & Pagination):** A grid of blog posts with category filtering and pagination.
+* **Blog Detail (`/blog/[slug]`):** A dynamic page for each blog post.
+* **FAQ:** A page with multiple, interactive accordion lists.
+* **Contact Us:** A page with a functional contact form.
+
+## 📂 Project Structure
+
+The project follows a feature-colocated structure within the `components` directory, with `app` routes assembling the final pages.
+...
+
+## 🚀 Getting Started
+
+To run this project locally, you'll need Node.js (v18.17 or later).
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+This project uses npm (but yarn or pnpm will also work).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Run the Development Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm run dev
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open http://localhost:3000 in your browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
