@@ -168,3 +168,14 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+
+export interface NavLinkItem {
+  name: string;
+  href: string;
+}
+
+// This is the main type for your header
+export interface NavLink extends NavLinkItem {
+  hasDropdown?: boolean;
+  dropdownLinks?: NavLinkItem[]; // Array of links for the dropdown
+}
