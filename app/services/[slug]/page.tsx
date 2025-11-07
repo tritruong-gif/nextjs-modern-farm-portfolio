@@ -4,21 +4,33 @@
 // We do not add "use client".
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { mockServices } from '@/components/data/services'; // Import all services
+import { mockServices, } from '@/components/data/services'; // Import all services
 import BreadcrumbHero from '@/components/ui/BreadcrumbHero';
 import ServiceSidebarNav from '@/components/ui/ServiceSidebarNav';
 import SidebarCtaCard from '@/components/ui/SidebarCtaCard';
 import DownloadCard from '@/components/ui/DownloadCard';
 import ServiceDetailContent from '@/components/sections/ServiceDetailContent';
+import ServiceNavigation from '@/components/ui/ServiceNavigation';
 
 // --- Data Fetching Function (runs on server) ---
-async function getServiceBySlug(slug: string) {
-  // In a real app, this would be a database call.
-  // We also import all services for the sidebar.
-  const allServices = mockServices; 
-  // We find the service using the 'slug'.
-  const service = allServices.find(s => s.slug === slug);
-  return { service, allServices };
+async function getServiceData(slug: string) {
+  const allItems = mockServices; 
+  const service = allItems.find(s => s.slug === slug);
+
+  if (!service) {
+    return { service: undefined, allServices: allItems, prevService: undefined, nextService: undefined };
+  }
+
+  // Filter for *only* items of the same type (services or products)
+  const relevantItems = allItems.filter(item => item.type === service.type);
+  
+  // Find index within the filtered list
+  const currentIndex = relevantItems.findIndex(item => item.slug === slug);
+
+  const prevService = currentIndex > 0 ? relevantItems[currentIndex - 1] : undefined;
+  const nextService = currentIndex < relevantItems.length - 1 ? relevantItems[currentIndex + 1] : undefined;
+
+  return { service, allServices: allItems, prevService, nextService };
 }
 
 // --- Static Generation (Optional but recommended) ---
@@ -39,7 +51,7 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   // We get the service data on the server using the slug from the URL.
-  const { service, allServices } = await getServiceBySlug((await params).slug);
+  const { service, allServices, prevService, nextService } = await getServiceData((await params).slug);
 
   // If no service matches, we call notFound()
   if (!service) {
@@ -69,6 +81,7 @@ export default async function ServiceDetailPage({
             <div className="lg:col-span-2">
               {/* This server component receives the specific service data */}
               <ServiceDetailContent service={service} />
+              <ServiceNavigation prevService={prevService} nextService={nextService} />
             </div>
 
           </div>

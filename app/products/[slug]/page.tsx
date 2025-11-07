@@ -10,15 +10,27 @@ import ServiceSidebarNav from '@/components/ui/ServiceSidebarNav';
 import SidebarCtaCard from '@/components/ui/SidebarCtaCard';
 import DownloadCard from '@/components/ui/DownloadCard';
 import ProductDetailContent from '@/components/sections/ProductDetailContent';
+import ServiceNavigation from '@/components/ui/ServiceNavigation';
 
 // --- Data Fetching Function (runs on server) ---
-async function getSProductBySlug(slug: string) {
-  // In a real app, this would be a database call.
-  // We also import all services for the sidebar.
-  const allProducts = mockProducts; 
-  // We find the service using the 'slug'.
-  const product = allProducts.find(s => s.slug === slug);
-  return { product, allProducts };
+async function getProductData(slug: string) {
+  const allItems = mockProducts; 
+  const service = allItems.find(s => s.slug === slug);
+
+  if (!service) {
+    return { service: undefined, allServices: allItems, prevService: undefined, nextService: undefined };
+  }
+
+  // Filter for *only* items of the same type (services or products)
+  const relevantItems = allItems.filter(item => item.type === service.type);
+  
+  // Find index within the filtered list
+  const currentIndex = relevantItems.findIndex(item => item.slug === slug);
+
+  const prevService = currentIndex > 0 ? relevantItems[currentIndex - 1] : undefined;
+  const nextService = currentIndex < relevantItems.length - 1 ? relevantItems[currentIndex + 1] : undefined;
+
+  return { service, allServices: allItems, prevService, nextService };
 }
 
 // --- Static Generation (Optional but recommended) ---
@@ -39,10 +51,10 @@ export default async function ProductDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   // We get the service data on the server using the slug from the URL.
-  const { product, allProducts } = await getSProductBySlug((await params).slug);
+  const { service, allServices, prevService, nextService } = await getProductData((await params).slug);
 
   // If no service matches, we call notFound()
-  if (!product) {
+  if (!service) {
     notFound();
   }
   
@@ -60,7 +72,7 @@ export default async function ProductDetailPage({
             {/* Left Column (Sidebar) */}
             <aside className="lg:col-span-1 space-y-8">
               {/* This client component receives all services as a prop */}
-              <ServiceSidebarNav services={allProducts} />
+              <ServiceSidebarNav services={allServices} />
               <SidebarCtaCard />
               <DownloadCard />
             </aside>
@@ -68,7 +80,8 @@ export default async function ProductDetailPage({
             {/* Right Column (Main Content) */}
             <div className="lg:col-span-2">
               {/* This server component receives the specific service data */}
-              <ProductDetailContent product={product} />
+              <ProductDetailContent product={service} />
+              <ServiceNavigation prevService={prevService} nextService={nextService} />
             </div>
 
           </div>
