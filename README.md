@@ -8,7 +8,7 @@
 A modern, high-performance, and fully responsive static portfolio website for a fictional farm named 'Agrimo'. This project is built from the ground up using the latest Next.js 14 App Router, TypeScript, and the experimental Tailwind 4 (Alpha) with a CSS-first, `@theme`-based approach.
 
 ### Live Demo
-**[https://your-demo-link.vercel.app/](https://your-demo-link.vercel.app/)** *(Replace with your Vercel deployment URL)*
+**[[https://your-demo-link.vercel.app/](https://your-demo-link.vercel.app/)](https://nextjs-modern-farm-portfolio.vercel.app/)** *(Replace with your Vercel deployment URL)*
 
 <br>
 
