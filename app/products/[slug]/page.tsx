@@ -1,37 +1,37 @@
-// app/services/[slug]/page.tsx
+// app/products/[slug]/page.tsx
 
 // This is a Server Component by default.
 // We do not add "use client".
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { mockServices } from '@/components/data/services'; // Import all services
+import { mockProducts } from '@/components/data/services'; // Import all services
 import BreadcrumbHero from '@/components/ui/BreadcrumbHero';
 import ServiceSidebarNav from '@/components/ui/ServiceSidebarNav';
 import SidebarCtaCard from '@/components/ui/SidebarCtaCard';
 import DownloadCard from '@/components/ui/DownloadCard';
-import ServiceDetailContent from '@/components/sections/ServiceDetailContent';
+import ProductDetailContent from '@/components/sections/ProductDetailContent';
 
 // --- Data Fetching Function (runs on server) ---
-async function getServiceBySlug(slug: string) {
+async function getSProductBySlug(slug: string) {
   // In a real app, this would be a database call.
   // We also import all services for the sidebar.
-  const allServices = mockServices; 
+  const allProducts = mockProducts; 
   // We find the service using the 'slug'.
-  const service = allServices.find(s => s.slug === slug);
-  return { service, allServices };
+  const product = allProducts.find(s => s.slug === slug);
+  return { product, allProducts };
 }
 
 // --- Static Generation (Optional but recommended) ---
 // This function tells Next.js to pre-render all service pages
 // at build time for a super-fast static site.
 export async function generateStaticParams() {
-  return mockServices.map((service) => ({
-    slug: service.slug,
+  return mockProducts.map((product) => ({
+    slug: product.slug,
   }));
 }
 
 // --- Page Component (Server Component) ---
-export default async function ServiceDetailPage({
+export default async function ProductDetailPage({
   params,
 }: {
   // The 'params' prop is automatically passed to the page
@@ -39,10 +39,10 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   // We get the service data on the server using the slug from the URL.
-  const { service, allServices } = await getServiceBySlug((await params).slug);
+  const { product, allProducts } = await getSProductBySlug((await params).slug);
 
   // If no service matches, we call notFound()
-  if (!service) {
+  if (!product) {
     notFound();
   }
   
@@ -60,7 +60,7 @@ export default async function ServiceDetailPage({
             {/* Left Column (Sidebar) */}
             <aside className="lg:col-span-1 space-y-8">
               {/* This client component receives all services as a prop */}
-              <ServiceSidebarNav services={allServices} />
+              <ServiceSidebarNav services={allProducts} />
               <SidebarCtaCard />
               <DownloadCard />
             </aside>
@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({
             {/* Right Column (Main Content) */}
             <div className="lg:col-span-2">
               {/* This server component receives the specific service data */}
-              <ServiceDetailContent service={service} />
+              <ProductDetailContent product={product} />
             </div>
 
           </div>

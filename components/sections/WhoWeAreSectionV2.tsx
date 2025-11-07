@@ -1,25 +1,38 @@
+// components/sections/AboutWhoWeAreSection.tsx
 import React from 'react';
 import CustomImage from '../ui/CustomImage';
-import InfoItem from '@/components/ui/InfoItem';
-import SectionTag from '@/components/ui/SectionTag';
-import { infoItems } from '@/components/data/whoWeAre';
+import SectionTag from '../ui/SectionTag';
 
-const LeafIcon = () => <CustomImage src="/images/icons/leaf.svg" alt="" width={16} height={16} />;
+// Icon for the SectionTag
+const LeafIcon = () => (
+  <CustomImage 
+    src="/images/icons/leaf.svg" 
+    alt="" 
+    width={16} 
+    height={16} 
+  />
+);
 
-const WhoWeAreSection: React.FC = () => {
+const AboutWhoWeAreSection: React.FC = () => {
   return (
-    <div className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section className="bg-light-cream py-20 px-4">
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          
+          {/* Left Column: Image */}
           <div className="w-full lg:w-1/2 relative">
             <CustomImage
-              src="/images/farmer.jpg"
+              src="/images/farmer.jpg" // As specified in prompt
               alt="Farmer checking orange tree"
-              width={500}
-              height={500}
-              className="rounded-xl shadow-lg w-full h-auto object-cover"
+              width={600}
+              height={550}
+              className="rounded-2xl shadow-lg w-full h-auto object-cover"
             />
-            <div className="absolute -bottom-8 -right-4 bg-brand-yellow p-6 rounded-xl shadow-md w-[200px]">
+            {/* Stats Box Overlay from mock-up */}
+            <div 
+              className="absolute -bottom-8 -right-4 lg:right-[-2rem] 
+                         bg-brand-yellow p-6 rounded-xl shadow-md w-[200px]"
+            >
               <p className="text-4xl font-bold text-dark-green mb-1">
                 * 435+
               </p>
@@ -28,35 +41,37 @@ const WhoWeAreSection: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 lg:pl-10 mt-12 lg:mt-0">
+
+          {/* Right Column: Content */}
+          <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
             <SectionTag 
               icon={<LeafIcon />} 
-              className="mb-3 text-brand-green bg-white"
+              className="mb-4 text-dark-green bg-white"
             >
-              Who We Are
+              About Us
             </SectionTag>
+
+            {/* --- NEW TEXT --- */}
             <h2 className="text-4xl font-bold text-dark-green leading-tight mb-6">
-              Currently we are growing and selling organic food
+              Local farmers with genuine care from seed, soil, to food on your table
             </h2>
+
             <p className="text-gray-text mb-8">
-              There are many variations of passages of Lorem Ipsum available, but the majority
-              have suffered alteration in some form.
+              Our journey commenced with a single farming enthusiast founder, Will. He initially
+              established small garden beds in his backyard to cultivate vegetables, driven by
+              the desire to provide high-quality, organic produce for his family. As his harvest
+              exceeded his family&apos;s requirements, he began selling the surplus at the local
+              farmers market on weekends. This local market presence has since expanded,
+              allowing us to now serve the wider public.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {infoItems.map((item) => (
-                <InfoItem
-                  key={item.id}
-                  iconSrc={item.iconSrc}
-                  title={item.title}
-                  description={item.description}
-                />
-              ))}
-            </div>
+            {/* --- END NEW TEXT --- */}
+
+            {/* Info blocks are omitted as requested */}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default WhoWeAreSection;
+export default AboutWhoWeAreSection;

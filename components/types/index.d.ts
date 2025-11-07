@@ -11,19 +11,21 @@
 
 export interface Service {
   id: string;
-  slug: string; // Add slug for URL
+  slug: string;
+  type: 'product' | 'service'; // <-- ADD THIS
   category: string;
   title: string;
   description: string; // Short description (for cards)
   imageUrl: string; // Card image
   href: string; // (e.g., /services/harvest-concepts)
 
-  // --- NEW PROPERTIES FOR DETAIL PAGE ---
-  mainImageUrl: string; // The large image for the detail page
-  longDescription: string; // The main "Why Choose" text
-  workPoints: string[]; // List of strings for "Modern Technique Work Points"
-  faqs: FaqItem[]; // A list of FAQs for this specific service
+  // --- DETAIL PAGE PROPERTIES ---
+  mainImageUrl: string;
+  longDescription: string;
+  workPoints: string[];
+  faqs: FaqItem[];
 }
+
 export interface Testimonial {
   id: string;
   name: string;

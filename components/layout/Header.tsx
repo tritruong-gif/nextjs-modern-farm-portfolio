@@ -24,7 +24,7 @@ const navLinks: NavLink[] = [
   { name: 'HOME', href: '/' },
   { 
     name: 'ABOUT', 
-    href: '/about', // Main link now goes to the first sub-page
+    href: '/about-us', // Main link now goes to the first sub-page
     hasDropdown: true,
     dropdownLinks: [
       { name: 'About Us', href: '/about-us' },
@@ -36,13 +36,10 @@ const navLinks: NavLink[] = [
   { 
     name: 'SERVICES', 
     href: '/services',
-    hasDropdown: true,
-    dropdownLinks: [
-      { name: 'All Services', href: '/services' },
-      { name: 'Harvest Concepts', href: '/services/harvest-concepts' },
-      { name: 'Farming Products', href: '/services/farming-products' },
-      { name: 'Soil Fertilization', href: '/services/soil-fertilization' },
-    ]
+  },
+  { 
+    name: 'PRODUCTS', 
+    href: '/products',
   },
   { name: 'BLOG', href: '/blog' },
   { name: 'CONTACT US', href: '/contact' },

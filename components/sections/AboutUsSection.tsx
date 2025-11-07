@@ -14,7 +14,10 @@ const AboutUsSection: React.FC = () => {
     <section className="bg-light-cream" id="about">
       <FeatureHighlightSection />
       <WhoWeAreSection />
-      <TextClipSection />
+      <TextClipSection 
+        bgClassName="bg-light-cream" 
+        itemVariant="about" 
+      />
     </section>
   );
 };

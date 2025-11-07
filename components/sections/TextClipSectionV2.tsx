@@ -1,18 +1,30 @@
 // components/sections/TextClipSection.tsx
 import React from 'react';
 
-// Define the variants for the marquee items' colors
-type MarqueeItemVariant = 'default' | 'alternate';
+// Define the variants
+type MarqueeVariant = 'default' | 'alternate' | 'about';
 
 // Reusable item for the marquee
-const MarqueeItem: React.FC<{ text: string, variant: MarqueeItemVariant, className?: string }> = ({ text, variant, className }) => {
-  // Define colors based on the variant
-  const textColor = variant === 'default' ? 'text-dark-green' : 'text-light-cream';
-  const starColor = variant === 'default' ? 'text-brand-yellow' : 'text-brand-yellow';
+const MarqueeItem: React.FC<{ text: string, variant: MarqueeVariant }> = ({ text, variant }) => {
+  let textColor, starColor;
+
+  switch (variant) {
+    case 'alternate': // Green BG, Yellow Text/Star
+      textColor = 'text-brand-yellow';
+      starColor = 'text-brand-yellow';
+      break;
+    case 'about':     // Light BG, Green Text, Yellow Star
+      textColor = 'text-brand-green';
+      starColor = 'text-brand-yellow';
+      break;
+    default:          // Light BG, Dark Text, Green Star
+      textColor = 'text-dark-green';
+      starColor = 'text-brand-green';
+  }
 
   return (
     <div
-      className={`flex items-center text-4xl font-bold whitespace-nowrap px-6 ${textColor} ${className}`}
+      className={`flex items-center text-4xl font-bold opacity-20 whitespace-nowrap px-6 ${textColor}`}
     >
       {text}
       <span className={`mx-4 ${starColor}`}>*</span>
@@ -25,17 +37,14 @@ const marqueeItems = [
   "Agriculture", "Farming", "Organic", "Vegetables", "Products", "Quality"
 ];
 
-// Add the 'bgClassName' prop for the background and 'itemVariant' for item styling
 interface TextClipSectionProps {
   bgClassName?: string;
-  itemVariant?: MarqueeItemVariant;
-  itemClassName?: string; // Optional for further customization of the marquee items
+  itemVariant?: MarqueeVariant;
 }
 
 const TextClipSection: React.FC<TextClipSectionProps> = ({ 
   bgClassName = 'bg-light-cream', // Default background
   itemVariant = 'default',       // Default item variant
-  itemClassName = ''             // Default item class
 }) => {
   return (
     <div className={`py-16 overflow-hidden ${bgClassName}`}> {/* Apply background here */}
@@ -43,12 +52,12 @@ const TextClipSection: React.FC<TextClipSectionProps> = ({
         {/* We duplicate the content to create a seamless loop */}
         <div className="flex animate-marquee">
           {marqueeItems.map((item, i) => (
-            <MarqueeItem key={`a-${i}`} text={item} variant={itemVariant} className={itemClassName} />
+            <MarqueeItem key={`a-${i}`} text={item} variant={itemVariant} />
           ))}
         </div>
         <div className="flex animate-marquee" aria-hidden="true">
           {marqueeItems.map((item, i) => (
-            <MarqueeItem key={`b-${i}`} text={item} variant={itemVariant} className={itemClassName} />
+            <MarqueeItem key={`b-${i}`} text={item} variant={itemVariant} />
           ))}
         </div>
       </div>

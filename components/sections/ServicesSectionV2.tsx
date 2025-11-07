@@ -1,5 +1,5 @@
 import React from 'react';
-import { services } from '@/components/data/services';
+import { mockServices } from '@/components/data/services';
 // import ServiceCard from '@/components/ui/ServiceCard';
 import ServiceCard from '@/components/ui/ServiceCardV2';
 // import SectionTag from '@/components/ui/SectionTag';
@@ -29,7 +29,7 @@ const ServicesSection: React.FC = () => {
           title="Best Agriculture Services"
           theme="dark"
         >
-          {services.map((service) => (
+          {mockServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </ServiceCarousel>

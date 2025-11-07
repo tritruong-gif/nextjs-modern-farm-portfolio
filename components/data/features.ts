@@ -11,14 +11,14 @@ export const features: Feature[] = [
     title: 'Professional Farmers',
     description: 'Nullam porta enim vel tellus commodo, eget laoreet odio ultrices.',
     iconSrc: '/images/icons/tractor.svg', // Placeholder
-    href: '/services/farmers'
+    href: '/services'
   },
   {
     id: '2',
     title: 'Fresh Vegetables',
     description: 'Nullam porta enim vel tellus commodo, eget laoreet odio ultrices.',
     iconSrc: '/images/icons/hand-with-plant.svg', // Placeholder
-    href: '/services/vegetables'
+    href: '/services/products'
   },
   {
     id: '3',
@@ -32,6 +32,6 @@ export const features: Feature[] = [
     title: '100% Guaranteed',
     description: 'Nullam porta enim vel tellus commodo, eget laoreet odio ultrices.',
     iconSrc: '/images/icons/plant.svg', // Placeholder
-    href: '/about/guarantee'
+    href: '/about-us'
   }
 ];

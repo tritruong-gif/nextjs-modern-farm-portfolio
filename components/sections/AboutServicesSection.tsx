@@ -2,7 +2,7 @@
 // (MODIFIED)
 
 import React from 'react';
-import { services } from '@/components/data/services'; // Assumed to exist
+import { mockServices } from '@/components/data/services'; // Assumed to exist
 import ServiceCarousel from '@/components/ui/AgricultureServiceCarousel';
 import HomePageServiceCard from '@/components/ui/AgricultureServiceCard'; // <-- The NEW card
 import SectionTag from '@/components/ui/SectionTag';
@@ -16,7 +16,7 @@ const LeafIcon = () => (
 const ServicesSection: React.FC = () => {
   // To make the 4-card carousel work, let's assume you have at least 4 services.
   // If you have more (e.g., 8), the carousel will have 2 pages.
-  const allServices = services; // Pass all your services
+  const allServices = mockServices; // Pass all your services
 
   return (
     // Swapped to light-cream background
