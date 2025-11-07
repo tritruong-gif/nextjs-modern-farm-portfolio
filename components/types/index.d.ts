@@ -82,25 +82,72 @@ export interface HistoryEvent {
   description: string;
 }
 
-export interface BlogPost {
+// types/index.d.ts
+
+// ... (keep all your other types like Service, Testimonial, etc.)
+
+export interface BlogCategory {
   id: string;
-  category: string;
-  date: string;
-  author: string;
-  title: string;
-  imageUrl: string;
+  name: string;
+  slug: string; // e.g., "agriculture"
+}
+
+// Update BlogPost to include categorySlug
+export interface BlogTag {
+  id: string;
+  name: string;
   href: string;
 }
 
+export interface NumberedBlock {
+  id: string;
+  title: string;
+  description: string;
+}
+
+// Modify the existing BlogPost type
 export interface BlogPost {
   id: string;
   slug: string;
   category: string;
+  categorySlug: string;
   date: string;
   author: string;
   title: string;
-  imageUrl: string;
-  href: string;
+  imageUrl: string; // Card image
+  href: string; // (e.g., /blog/my-post)
+
+  // --- NEW PROPERTIES FOR DETAIL PAGE ---
+  mainImageUrl: string; // The large image (man with VR)
+  
+  // Metadata section
+  tags: BlogTag[]; // List of tags
+  
+  // Main content section
+  contentTitle: string; // "Better Agriculture for Better Future"
+  contentP1: string; // First paragraph
+  contentP2: string; // Second paragraph
+  
+  // Two-column images
+  twoColImg1: string;
+  twoColImg2: string;
+  
+  // List section
+  listTitle: string; // "Everything on our farm is grown"
+  listItems: string[]; // List of strings for the checkmark list
+  
+  // Numbered blocks section
+  numberedBlocks: NumberedBlock[]; // Array of 3 blocks
+  
+  // Creative section
+  creativeTitle: string; // "We do Creative Things for Success"
+  creativeContent: string;
+  
+  // Quote section
+  quote: {
+    text: string;
+    author: string;
+  };
 }
 
 export interface InfoItem {

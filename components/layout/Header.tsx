@@ -19,9 +19,8 @@ const ArrowRightIcon = () => <Image src="/images/icons/arrow.svg" alt="" width={
 
 const navLinks = [
   { name: 'HOME', href: '/' },
-  { name: 'ABOUT', href: '/about-us' },
-  { name: 'SERVICES', href: '/services', hasDropdown: true },
-  { name: 'PRODUCTS', href: '/services/products', hasDropdown: true },
+  { name: 'ABOUT', href: '/about-us', hasDropdown: true },
+  { name: 'SERVICES', href: '/services' },
   { name: 'BLOG', href: '/blog' },
   { name: 'CONTACT US', href: '/contact' },
 ];

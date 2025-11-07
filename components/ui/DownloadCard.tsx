@@ -6,15 +6,23 @@ import CustomImage from './CustomImage';
 // --- Icons ---
 const PdfIcon = () => (
   <CustomImage 
-    src="/images/icons/pdf-file.svg" 
+    src="/images/icons/pdf.svg" 
     alt="PDF" 
     width={20} 
     height={20} 
   />
 );
-const WordIcon = () => (
+const DownloadIconWhite = () => (
   <CustomImage 
-    src="/images/icons/word-file.svg" 
+    src="/images/icons/download-white.svg" 
+    alt="Word" 
+    width={20} 
+    height={20} 
+  />
+);
+const DownloadIconDark = () => (
+  <CustomImage 
+    src="/images/icons/download-dark.svg" 
     alt="Word" 
     width={20} 
     height={20} 
@@ -40,7 +48,7 @@ const DownloadCard: React.FC = () => {
           href="/files/profile.doc" 
           variant="secondary" 
           size="md"
-          icon={<WordIcon />}
+          icon={<PdfIcon />}
           className="w-full justify-start border border-gray-300"
         >
           DOWNLOAD WORD FILE

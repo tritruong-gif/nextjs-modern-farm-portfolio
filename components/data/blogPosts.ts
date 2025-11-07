@@ -1,43 +1,405 @@
 // components/data/blogPosts.ts
-// (Create this new file)
-
 import { BlogPost } from '@/components/types';
 
 export const blogPosts: BlogPost[] = [
   {
     id: '1',
-    category: 'Food Crisis',
+    slug: 'vertical-farming',
+    category: 'Food Crops',
+    categorySlug: 'food-crops',
     date: 'March 28, 2024',
     author: 'Admin',
     title: 'What technology is used in vertical farming?',
-    imageUrl: '/images/blog/blog-1.jpg', // Add this image
+    imageUrl: '/images/blog/blog-1.jpg',
     href: '/blog/vertical-farming',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
   },
   {
     id: '2',
+    slug: 'farming-types',
     category: 'Organic Farm',
+    categorySlug: 'organic-farm',
     date: 'March 28, 2024',
     author: 'Admin',
     title: 'Which type of farming is more prevalent today?',
-    imageUrl: '/images/blog/blog-2.jpg', // Add this image
+    imageUrl: '/images/blog/blog-2.jpg',
     href: '/blog/farming-types',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
   },
   {
     id: '3',
+    slug: 'farmers-sentiment',
     category: 'Farming Tips',
+    categorySlug: 'farming-tips',
     date: 'March 28, 2024',
     author: 'Admin',
     title: 'The Farmers Sentiment Darkens Hopes Fade',
-    imageUrl: '/images/blog/blog-3.jpg', // Add this image
+    imageUrl: '/images/blog/blog-3.jpg',
     href: '/blog/farmers-sentiment',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
   },
   {
     id: '4',
-    category: 'Technology',
+    slug: 'person-who-works',
+    category: 'Mixed Farming',
+    categorySlug: 'mixed-farming',
+    date: 'March 28, 2024',
+    author: 'Admin',
+    title: 'A farmer is a person who works in agriculture',
+    imageUrl: '/images/blog/blog-4.jpg',
+    href: '/blog/person-who-works',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
+  },
+  {
+    id: '5',
+    slug: 'organic-fruits',
+    category: 'Agriculture',
+    categorySlug: 'agriculture',
+    date: 'March 28, 2024',
+    author: 'Admin',
+    title: 'Organic Fruits: Hidden Advantages And Information',
+    imageUrl: '/images/blog/blog-5.jpg',
+    href: '/blog/organic-fruits',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
+  },
+  {
+    id: '6',
+    slug: 'organic-vegetables',
+    category: 'Extensive',
+    categorySlug: 'extensive',
+    date: 'March 28, 2024',
+    author: 'Admin',
+    title: 'How to Include Organic Vegetables in Your Diet',
+    imageUrl: '/images/blog/blog-6.jpg',
+    href: '/blog/organic-vegetables',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
+  },
+  {
+    id: '7',
+    slug: 'rural-infrastructure',
+    category: 'Farming Tips',
+    categorySlug: 'farming-tips',
+    date: 'March 28, 2024',
+    author: 'Admin',
+    title: 'Agricultural Infrastructure in Rural Areas',
+    imageUrl: '/images/blog/blog-7.jpg',
+    href: '/blog/rural-infrastructure',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
+  },
+  {
+    id: '8',
+    slug: 'upcoming-season',
+    category: 'Food Crops',
+    categorySlug: 'food-crops',
+    date: 'March 28, 2024',
+    author: 'Admin',
+    title: 'Are You Prepared for the Upcoming Season?',
+    imageUrl: '/images/blog/blog-8.jpg',
+    href: '/blog/upcoming-season',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
+  },
+  {
+    id: '9',
+    slug: 'beginners-guide',
+    category: 'Mixed Farming',
+    categorySlug: 'mixed-farming',
+    date: 'March 28, 2024',
+    author: 'Admin',
+    title: "A Beginner's Guide for Managing a Successful Farm",
+    imageUrl: '/images/blog/blog-9.jpg',
+    href: '/blog/beginners-guide',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
+  },
+  {
+    id: '10',
+    slug: 'sustainable-future',
+    category: 'Agriculture',
+    categorySlug: 'agriculture',
     date: 'March 27, 2024',
     author: 'Admin',
-    title: 'The Future of Sustainable Agriculture',
-    imageUrl: '/images/blog/blog-4.jpg', // Add this image
-    href: '/blog/sustainable-agriculture',
+    title: 'Building a Sustainable Future in Farming',
+    imageUrl: '/images/blog/blog-1.jpg', // Reusing image for demo
+    href: '/blog/sustainable-future',
+    // --- NEW DETAIL DATA ---
+    mainImageUrl: '/images/blog/details/blog-main-1.jpg', // Man with VR
+    tags: [
+      { id: 't1', name: 'Farming', href: '/blog?tag=farming' },
+      { id: 't2', name: 'Tech', href: '/blog?tag=tech' },
+    ],
+    contentTitle: 'Better Agriculture for Better Future',
+    contentP1: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+    contentP2: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.',
+    twoColImg1: '/images/blog/details/blog-sub-1.jpg',
+    twoColImg2: '/images/blog/details/blog-sub-2.jpg',
+    listTitle: 'Everything on our farm is grown',
+    listItems: [
+      'Cost-effective and sustainable solution for agriculture.',
+      'Instantly connects with an Agronomist to remediate.',
+      'Keep Yourself Current And on top of Latest Farming Trends.',
+      'Make the earth cleaner, make the earth greener.',
+    ],
+    numberedBlocks: [
+      { id: 'nb1', title: 'Schedule Your Experience', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb2', title: 'Get Professional Advice', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+      { id: 'nb3', title: 'Meet Our Expert People', description: 'Corrupti ut consequatur magni minus! Iusto eos consectetur.' },
+    ],
+    creativeTitle: 'We do Creative Things for Success',
+    creativeContent: 'They offer ecologically high nutritional value animal feed higher yields with minimal agronomial inputs, combined at up to zealously. Repository on the field of natural resources management speaking the was out humble for domestic position.',
+    quote: {
+      text: 'When you listen to yourself, everything comes naturally. It comes from inside, like a kind of will to do something. Try to be sensitive. That is just a few clicks away.',
+      author: 'Satisfied Client',
+    },
   },
 ];

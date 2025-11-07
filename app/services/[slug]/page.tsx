@@ -6,7 +6,6 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import { services } from '@/components/data/services'; // Import all services
 import BreadcrumbHero from '@/components/ui/BreadcrumbHero';
-import CallToActionSection from '@/components/sections/CallToActionSection';
 import ServiceSidebarNav from '@/components/ui/ServiceSidebarNav';
 import SidebarCtaCard from '@/components/ui/SidebarCtaCard';
 import DownloadCard from '@/components/ui/DownloadCard';
@@ -76,8 +75,6 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {/* 3. Yellow bar */}
-      <CallToActionSection />
     </main>
   );
 }
