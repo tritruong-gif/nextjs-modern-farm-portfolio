@@ -14,7 +14,7 @@ A modern, high-performance, and fully responsive static portfolio website for a 
 
 <details>
   <summary><b>Click to view Full Homepage Screenshot</b></summary>
-  <img src="home.png" alt="Agrimo Homepage Mockup"/>
+  <img src="/public/images/Home.png" alt="Agrimo Homepage Mockup"/>
 </details>
 
 <br>
