@@ -57,8 +57,27 @@ This project isn't just a simple static site; it leverages modern Next.js patter
 ## 📂 Project Structure
 
 The project follows a feature-colocated structure within the `components` directory, with `app` routes assembling the final pages.
-...
 
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about-us
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/vertical-farming
+│ ├ /blog/farming-types
+│ ├ /blog/farmers-sentiment
+│ └ [+7 more paths]
+├ ○ /contact
+├ ○ /faq
+├ ○ /our-history
+├ ○ /services
+└ ● /services/[slug]
+  ├ /services/harvest-concepts
+  ├ /services/farming-products
+  ├ /services/harvest-concepts-3
+  └ [+7 more paths]
+  
 ## 🚀 Getting Started
 
 To run this project locally, you'll need Node.js (v18.17 or later).
