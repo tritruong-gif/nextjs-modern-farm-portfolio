@@ -1,12 +1,28 @@
 // types/index.d.ts
 
+// export interface Service {
+//   id: string;
+//   category: string;
+//   title: string;
+//   description: string;
+//   imageUrl: string;
+//   href: string;
+// }
+
 export interface Service {
   id: string;
+  slug: string; // Add slug for URL
   category: string;
   title: string;
-  description: string;
-  imageUrl: string;
-  href: string;
+  description: string; // Short description (for cards)
+  imageUrl: string; // Card image
+  href: string; // (e.g., /services/harvest-concepts)
+
+  // --- NEW PROPERTIES FOR DETAIL PAGE ---
+  mainImageUrl: string; // The large image for the detail page
+  longDescription: string; // The main "Why Choose" text
+  workPoints: string[]; // List of strings for "Modern Technique Work Points"
+  faqs: FaqItem[]; // A list of FAQs for this specific service
 }
 export interface Testimonial {
   id: string;

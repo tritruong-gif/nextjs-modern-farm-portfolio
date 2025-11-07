@@ -1,16 +1,18 @@
 // components/layout/Header.tsx
 'use client'; // Needed for mobile menu state
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import Button from '@/components/ui/Button'; // Import our new button
+import { DotIcon } from 'lucide-react';
 
 // Assuming you have these icons in /public/images/icons/
 // We import them as components for easier use
 const PhoneIcon = () => <Image src="/images/icons/phone.svg" alt="Phone" width={20} height={20} />;
 const SearchIcon = () => <Image src="/images/icons/search.svg" alt="Search" width={20} height={20} />;
-const ChevronDownIcon = () => <Image src="/images/icons/arrow.svg" alt="Dropdown" width={16} height={16} />;
+const ChevronDownIcon = () => <Image src="/images/icons/arrow.svg" alt="Dropdown" width={16} height={16} className='text-light-cream'/>;
 const MenuIcon = () => <Image src="/images/icons/menu.svg" alt="Menu" width={24} height={24} />;
 const CloseIcon = () => <Image src="/images/icons/close.svg" alt="Close" width={24} height={24} />;
 const ArrowRightIcon = () => <Image src="/images/icons/arrow.svg" alt="" width={16} height={16} />;
@@ -40,14 +42,18 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center justify-center flex-1">
-            <ul className="flex items-center space-x-8 text-white font-medium">
-              {navLinks.map((link) => (
-                <li key={link.name}>
+            <ul className="flex items-center space-x-4 text-white font-medium">
+              {navLinks.map((link, index) => (
+                <React.Fragment key={link.name}>
+                  <li key={link.name}>
                   <Link href={link.href} className="flex items-center gap-1.5 hover:text-brand-yellow transition-colors">
                     {link.name}
-                    {link.hasDropdown && <ChevronDownIcon />}
+                    {link.hasDropdown && <ChevronDownIcon/>}
                   </Link>
                 </li>
+
+              {index < navLinks.length - 1 && <DotIcon />}
+                  </React.Fragment>
               ))}
             </ul>
           </nav>

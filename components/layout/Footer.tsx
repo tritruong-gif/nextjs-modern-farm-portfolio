@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FacebookIcon, InstagramIcon, TwitterIcon, XIcon } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -15,9 +16,9 @@ const Footer: React.FC = () => {
           </p>
           <div className="flex space-x-4">
             {/* Social Icons (placeholders) */}
-            <Link href="#" aria-label="Facebook"><Image src="/images/icons/facebook.svg" alt="Facebook" width={24} height={24} /></Link>
-            <Link href="#" aria-label="Twitter"><Image src="/images/icons/twitter.svg" alt="Twitter" width={24} height={24} /></Link>
-            <Link href="#" aria-label="Instagram"><Image src="/images/icons/instagram.svg" alt="Instagram" width={24} height={24} /></Link>
+            <Link href="#" aria-label="Facebook"><FacebookIcon /></Link>
+            <Link href="#" aria-label="Twitter"><TwitterIcon /></Link>
+            <Link href="#" aria-label="Instagram"><InstagramIcon /></Link>
           </div>
         </div>
 
